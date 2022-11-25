@@ -19,9 +19,9 @@ export default function Homepage({postList, setPostList, filteredPost}) {
 	const [itemOffset, setItemOffset] = useState(0);
 
 	const itemsPerPage = 4;
-  const endOffset = itemOffset + itemsPerPage;
-  const currentItems = filteredPost.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(filteredPost.length / itemsPerPage);
+	const endOffset = itemOffset + itemsPerPage;
+	const currentItems = filteredPost.slice(itemOffset, endOffset);
+	const pageCount = Math.ceil(filteredPost.length / itemsPerPage);
 
 	const postsCollectionRef = collection(db, 'posts');
 	const commentsCollectionRef = collection(db, 'comments');
