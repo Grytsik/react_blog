@@ -1,0 +1,13 @@
+.slider__img {
+	margin-top: 10px;
+	box-shadow: 4px 3px 10px #9c8a8a;
+}
+
+.slider__items {
+	width: 30%;
+}
+
+.slider__block {
+	display: block;
+  width: 100%;
+}

@@ -1,0 +1,212 @@
+$color-black: #000;
+$color-white: #fff;
+$color-red: #de3131;
+$color-blue: #61dafb;
+
+.homePage {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: $color-black;
+}
+
+.homePage__container {
+	display: flex;
+  flex-wrap: wrap;
+	justify-content: space-around;
+}
+
+.userProfile {
+	align-items: center;
+	flex-grow: 1;
+}
+
+.userProfile__email-lDate {
+	margin-left: 15px;
+}
+
+.userPost {
+	width: 700px;
+	background: inherit;
+	box-shadow: 4px 3px 10px #9c8a8a;
+	color: black;
+	border-radius: 5px;
+	margin-top: 50px;
+	padding: 10px 10px;
+	position: relative;
+	background: #fff;
+}
+
+.userPost {
+	border: 2px solid $color-white;
+}
+
+.userPhoto {
+	width: 65px;
+	height: 65px;
+	border-radius: 5px;
+	transition: all .1s linear;
+	&:hover {
+		transition: all .1s linear;
+		transform: scale(1.2);
+	}
+}
+
+.userTitle {
+	margin: 15px 0;
+}
+
+.userText {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -moz-box;
+	-moz-box-orient: vertical;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	line-clamp: 3;
+	box-orient: vertical;
+}
+
+.userEmail {
+	font-size: 20px;
+	color: #B2B1B0;
+}
+
+.chatLogo__btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 20px;
+}
+
+.chat__btn {
+	width: 40px;
+  height: 40px;
+}
+
+
+.deleteBtn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	border-radius: 20px;
+	padding: 10px 20px;
+	border-radius: 20px;
+	font-weight: bold;
+	color: $color-white;
+	background: $color-red;
+	box-shadow: 0 0 40px 40px $color-red inset, 0 0 0 0 $color-red;
+	transition: all .2s linear;
+	&:hover {
+		font-weight: bold;
+		color: $color-red ;
+		background: $color-white;
+		box-shadow: 0 0 10px 0 $color-black;
+		transition: all .2s linear;
+	}
+}
+
+.edit__block {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.edit__text {
+	width: 300px;
+	margin-bottom: 20px;
+}
+
+.edit__area {
+	width: 100%;
+	font-size: 16px;
+	height: 200px;
+	padding: 5px;
+	resize: none;
+	position: relative;
+	border: 2px solid $color-black;
+	border-radius: 5px;
+	position: relative;
+}
+
+.btn__group {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.editLogo__btn {
+	position: absolute;
+	top: 10px;
+	right: 196px;
+	box-shadow: 0 0 10px 0 $color-black;
+  padding: 10px 20px;
+  background-color: $color-white;
+  border-radius: 20px;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 0 $color-black, 0 3rem 0 $color-white;
+  transition: background-color 150ms, text-shadow 200ms;
+  font-size: 1.1rem;
+  &:hover {
+    background-color: $color-red;
+    text-shadow: 0 -3rem 0 $color-black, 0 0 0 $color-white;
+  }
+}
+
+.commentLogo__btn:hover {
+	transition: all .3s linear;
+	transform: rotate(360deg);
+}
+
+.editBtn {
+	box-shadow: 0 0 10px 0 $color-black;
+	margin-top: 10px;
+  padding: 8px 30px;
+  background-color: $color-white;
+  border-radius: 20px;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 0 $color-black, 0 3rem 0 $color-white;
+  transition: background-color 150ms, text-shadow 200ms;
+  font-size: 1.1rem;
+  &:hover {
+    background-color: $color-red;
+    text-shadow: 0 -3rem 0 $color-black, 0 0 0 $color-white;
+  }
+}
+
+.pagination {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	font-size: 25px;
+	gap: 10px;
+	.active-page {
+		border-radius: 10px;
+		background-color: #61dafb;
+	}
+	.page-num {
+		cursor: pointer;
+		padding: 5px;
+		font-weight: bold;
+		transition: .2s linear;
+		&:not([disabled]):hover {
+			border-radius: 10px;
+			background-color: #61dafb;
+			transition: .2s linear;
+		}
+	}
+	.disabled-page {
+		color: #B2B1B0;
+		pointer-events: none;
+	}
+}
+

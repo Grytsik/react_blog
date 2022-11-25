@@ -1,0 +1,23 @@
+.userComments {
+	width: 900px;
+	background: white;
+	margin: 30px auto;
+	border-radius: 10px;
+	box-shadow: 4px 3px 10px #9c8a8a;
+}
+
+.userComments__container {
+	padding: 20px 10px;
+	position: relative;
+}
+
+.userComments__photo {
+	width: 40px;
+	height: 40px;
+	border-radius: 5px;
+}
+
+.userComments__comment {
+	text-align: center;
+	font-size: 22px;
+}

@@ -1,0 +1,17 @@
+.post {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.userPost__image {
+	display: block;
+	margin: auto;
+	margin-top: 15px;
+	// min-width: 300px;
+  // max-width: 100%;
+	width: 100%;
+    HEIGHT: 100%;
+    object-fit: cover;
+}

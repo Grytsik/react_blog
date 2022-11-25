@@ -1,0 +1,51 @@
+
+.loginProfile {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.userLoginPhoto {
+	width: 30px;
+	height: 30px;
+	transition: all .2s linear;
+}
+
+.photoNoName {
+	width: 40px;
+	height: 40px;
+	transition: all .2s linear;
+}
+
+.userLoginPhoto,
+.photoNoName {
+	border-radius: 5px;
+	&:hover {
+		transition: all .2s linear;
+		transform: scale(1.5);
+	}
+}
+
+.userLoginEmail {
+	margin: 0 10px;
+	font-size: 18px;
+	color: white;
+	font-weight: bold;
+}
+
+.userLogOut-email {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dropdown__btn {
+	width: 24px;
+	height: 24px;
+	transition: all .2s linear;
+}
+
+.dropdown__btn.active {
+	transition: all .2s linear;
+	transform: rotateX(180deg);
+}

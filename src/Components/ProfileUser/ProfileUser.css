@@ -1,0 +1,29 @@
+.profileUser {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	transform: translateX(-50%);
+	left: 50%;
+	margin-top: 100px;
+	width: 800px;
+	padding: 50px 10px;
+	background: rgb(139,138,156);
+	background: linear-gradient(72deg, rgba(139,138,156,1) 0%, rgba(240,239,242,1) 61%);
+}
+
+.profileUser__photo {
+	width: 150px;
+	height: 150px;
+}
+
+.profileUser__name {
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+.profile__span {
+	font-weight: bold;
+	margin-bottom: 15px;
+}

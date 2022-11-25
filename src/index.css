@@ -1,0 +1,26 @@
+
+
+
+
+
+/* Dark theme */
+
+html[data-theme='dark'] {
+	--div-background-color: #292626;
+	--div-text-color: #fff;
+	--input-text-color: white;
+	--input-background-color: white;
+	--input-border-color: white;
+	--background-image: url;
+}
+
+/* Light theme */
+
+html[data-theme='light'] {
+	--div-background-color: white;
+	--div-text-color: black;
+	--input-text-color: black;
+	--input-background-color: black;
+	--input-border-color: black;
+	--background-image: url;
+	}

@@ -1,0 +1,76 @@
+$color-white: #fff;
+$color-black: #000;
+$color-red: #de3131;
+
+.comments {
+	border: 1px solid $color-white;
+	width: 900px;
+	background: $color-white;
+	margin: 30px auto;
+	border-radius: 10px;
+	background: linear-gradient(120deg, #8b8a9c 0%, #f0eff2 61%);
+}
+
+.comments__container {
+	display: flex;
+	align-items: center;
+	padding: 20px 10px;
+	position: relative;
+}
+
+.comments__profile {
+	max-width: 300px;
+}
+
+.comments__text {
+	width: 100%;
+	height: 150px;
+	margin-left: 15px;
+	padding: 10px;
+	position: relative;
+	resize: none;
+	background: none;
+	border: none;
+	box-shadow: 4px 3px 10px #9c8a8a;
+
+	&::placeholder {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: $color-black;
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.comments__photo {
+	width: 50px;
+	height: 50px;
+	border-radius: 5px;
+}
+
+.comments__name {
+	font-size: 19px;
+}
+
+.comments__btn {
+	position: absolute;
+	bottom: 30px;
+	right: 20px;
+	box-shadow: 0 0 10px 0 $color-black;
+  padding: 8px 20px;
+  background-color: $color-white;
+  border-radius: 20px;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 0 $color-black, 0 3rem 0 $color-white;
+  transition: background-color 150ms, text-shadow 200ms;
+  font-size: 1.1rem;
+  &:hover {
+    background-color: $color-red;
+    text-shadow: 0 -3rem 0 $color-black, 0 0 0 $color-white;
+  }
+}
