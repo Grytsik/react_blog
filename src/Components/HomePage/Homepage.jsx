@@ -156,13 +156,13 @@ export default function Homepage({postList, setPostList, filteredPost}) {
 				}
 			</div>
 			<ReactPaginate
-        breakLabel="..."
-        nextLabel="next>"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
-        pageCount={pageCount}
-        previousLabel="<previous"
-        renderOnZeroPageCount={null}
+				breakLabel="..."
+				nextLabel="next>"
+				onPageChange={handlePageClick}
+				pageRangeDisplayed={5}
+				pageCount={pageCount}
+				previousLabel="<previous"
+				renderOnZeroPageCount={null}
 				containerClassName="pagination"
 				pageLinkClassName="page-num"
 				previousLinkClassName="page-num"
