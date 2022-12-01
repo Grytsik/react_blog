@@ -1,7 +1,6 @@
 import '../Dropdown/Dropdown.scss';
 import { Link } from 'react-router-dom';
 
-
 export default function Dropdown({setActiveDropdown, activeDropdown, signOutGoogle}) {
 
 	return (

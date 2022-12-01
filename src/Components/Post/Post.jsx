@@ -3,12 +3,11 @@ import AnonimUser from "../AnonimUser/AnonimUser";
 import Moment from "react-moment";
 import './Post.scss'
 
-export default function Post({props, children}) {
-
+export default function Post({props, children, cname, imgClass}) {
 
 	return (
 		<div key={props.id} className="post">
-			<div className='userPost'>
+			<div className={cname}>
 				<div className="userProfile">
 					<div className="userProfile__email-lDate">
 						{props.author.img ?
@@ -16,11 +15,17 @@ export default function Post({props, children}) {
 						<AnonimUser className={"userPhoto"}/>
 						}
 						<p className="userEmail">{props.author.name}</p>
-						<Moment className="userTime" format="dd HH:mm">{props.author.date}</Moment>
-						<div>
-							<img className="userPost__image" src={props.img} alt="" />
-						</div>
+						<Moment
+							className="userTime"
+							format="dd HH:mm"
+						>
+							{props.author.date}
+						</Moment>
 					</div>
+					<img
+						className={imgClass}
+						src={props.img}
+						alt="Post"/>
 				</div>
 				{children}
 			</div>

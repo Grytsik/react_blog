@@ -86,7 +86,11 @@ export default function Login({setIsAuth}) {
 						onClick={signWithGoogle}
 						type="button"
 						className="fb-btn">Connect with Google
-						<img className='logoGoogle' src={logo} alt='Google'/>
+						<img
+							className='logoGoogle'
+							src={logo}
+							alt='Google'
+						/>
 					</button>
 				</div>
 				<div className="sub-cont">
@@ -99,7 +103,10 @@ export default function Login({setIsAuth}) {
 							<h2>One of us?</h2>
 							<p>If you already has an account, just sign in. We've missed you!</p>
 						</div>
-						<div className="img__btn" onClick={() => setToggleClass(prev => !prev)}>
+						<div
+							className="img__btn"
+							onClick={() => setToggleClass(prev => !prev)}
+						>
 							<span className="m--up">Sign Up</span>
 							<span className="m--in">Sign In</span>
 						</div>
@@ -134,7 +141,11 @@ export default function Login({setIsAuth}) {
 							type="button"
 							className="fb-btn"
 						> Sign up with google
-								<img className='logoGoogle' src={logo} alt='Google'/>
+								<img
+									className='logoGoogle'
+									src={logo}
+									alt='Google'
+								/>
 							</button>
 					</div>
 				</div>

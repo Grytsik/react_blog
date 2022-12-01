@@ -30,9 +30,18 @@ export default function Homepage({postList, setPostList, filteredPost}) {
 		const getPosted = async () => {
 			const data = await getDocs(postsCollectionRef);
 			setPostList(data.docs.map(doc => ({...doc.data(), id: doc.id})));
-		}
+		};
 		getPosted();
 	}, []);
+
+	useEffect(() => {
+		const getComments = async () => {
+			const data = await getDocs(commentsCollectionRef);
+			setCommentsLength(data.docs.map(doc => ({...doc.data(), id: doc.id})));
+		};
+		getComments();
+	}, []);
+
 	// Функция для пагинации
 	const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % filteredPost.length;
@@ -44,14 +53,6 @@ export default function Homepage({postList, setPostList, filteredPost}) {
 		const com = commentsLength.filter(item => item.postId === id);
 		return com.length;
 	}
-
-	useEffect(() => {
-		const getComment = async () => {
-			const data = await getDocs(commentsCollectionRef);
-			setCommentsLength(data.docs.map(doc => ({...doc.data(), id: doc.id})));
-		}
-		getComment();
-	}, []);
 
 	const deletePost = async (id) => {
 		const postDoc = doc(db, 'posts', id);
@@ -85,7 +86,7 @@ export default function Homepage({postList, setPostList, filteredPost}) {
 						date: Date.now(),
 					}
 				})
-			}
+			};
 			return item;
 		});
 		setPostList(newPost);
@@ -101,57 +102,64 @@ export default function Homepage({postList, setPostList, filteredPost}) {
 					classBtn={false}
 					props={'post'}/> :
 					currentItems.map(item => (
-					<div key={item.id}>
-					{edit === item.id ?
-						<Post props={item}>
-							<EditBlock
-								editTitle={editTitle}
-								setEditTitle={setEditTitle}
-								valueEdit={valueEdit}
-								setValueEdit={setValueEdit}
-							>
-								<button
-									className="editBtn"
-									onClick={() => saveEditValue(item.id, item.img)}>Save
-								</button>
-							</EditBlock>
-						</Post> :
-						<Post props={item}>
-							<h2 className="userTitle">{item.postTitle}</h2>
-							<p className='userText'>{item.postText}</p>
-							<div className="btn__group">
-								<h3 className="chatLogo__btn">
-									<img
-										className="chat__btn"
-										src={chat}
-										alt="chat"/>{getCountComments(item.id)}
-								</h3>
-								{!auth.currentUser ? null :
-									<Link to={`/comments/${item.id}`}>
-										<button>
-											<img
-												className="commentLogo__btn"
-												src={commentsLogo}
-												alt="comments"/>
+						<div key={item.id}>
+						{edit === item.id ?
+							<Post
+								props={item}
+								cname='postUser'
+								imgClass='postImage'>
+								<EditBlock
+									editTitle={editTitle}
+									setEditTitle={setEditTitle}
+									valueEdit={valueEdit}
+									setValueEdit={setValueEdit}>
+									<button
+										className="editBtn"
+										onClick={() => saveEditValue(item.id, item.img)}>Save
+									</button>
+								</EditBlock>
+							</Post> :
+							<Post
+								props={item}
+								cname='postUser'
+								imgClass="postImage">
+								<div className="userInfo">
+									<h2 className="userTitle">{item.postTitle}</h2>
+									<p className="userText">{item.postText}</p>
+								</div>
+								<div className="btn__group">
+									<h3 className="chatLogo__btn">
+										<img
+											className="chat__btn"
+											src={chat}
+											alt="chat"/>{getCountComments(item.id)}
+									</h3>
+									{!auth.currentUser ? null :
+										<Link to={`/comments/${item.id}`}>
+											<button>
+												<img
+													className="commentLogo__btn"
+													src={commentsLogo}
+													alt="comments"/>
+											</button>
+										</Link>
+									}
+								</div>
+								{auth.currentUser && item.author.id === auth.currentUser.uid && (
+									<>
+										<button
+											className="deleteBtn"
+											onClick={() => deletePost(item.id)}>Delete
 										</button>
-								</Link>
-								}
-							</div>
-							{auth.currentUser && item.author.id === auth.currentUser.uid && (
-								<>
-									<button
-										className="deleteBtn"
-										onClick={() => deletePost(item.id)}>Delete
-									</button>
-									<button
-										className="editLogo__btn"
-										onClick={() => editPost(item.id, item.postText, item.postTitle)}>Edit
-									</button>
-								</>
-							)}
-						</Post>
-					}
-				</div>
+										<button
+											className="editLogo__btn"
+											onClick={() => editPost(item.id, item.postText, item.postTitle)}>Edit
+										</button>
+									</>
+								)}
+							</Post>
+						}
+					</div>
 					))
 				}
 			</div>
@@ -168,8 +176,7 @@ export default function Homepage({postList, setPostList, filteredPost}) {
 				previousLinkClassName="page-num"
 				nextLinkClassName="page-num"
 				activeLinkClassName="active-page"
-				disabledClassName="disabled-page"
-      />
+				disabledClassName="disabled-page"/>
 		</div>
 	)
 };

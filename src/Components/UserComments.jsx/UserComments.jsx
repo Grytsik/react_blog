@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { auth, db } from '../../firebase/firebase-config';
 import { deleteDoc, doc} from 'firebase/firestore';
 import UserPhotos from '../UserPhotos/UserPhotos';
@@ -14,21 +13,21 @@ export default function UserComments({commentsUser, setCommentsUser, paramsId}) 
 
 		let delComm = [...commentsUser].filter(item => item.id !== id);
 		setCommentsUser(delComm);
-	}
+	};
 
 	return (
 	<>
-		{
-		commentsUser.map(item => (
+		{commentsUser.map(item => (
 			item.postId !== paramsId ? null :
 				<div key={item.id} className='userComments'>
 					<div className="userComments__container">
 						<div className="userComments__profile">
-							{
-							item.author.img ?
-							<UserPhotos props={item} className={'userComments__photo'}/>
-							:
-							<AnonimUser className={'userComments__photo'}/>
+							{item.author.img ?
+								<UserPhotos
+									props={item}
+									className={'userComments__photo'}
+								/> :
+								<AnonimUser className={'userComments__photo'}/>
 							}
 							<h3>{item.author.name}</h3>
 							<Moment format="dd HH:mm">{item.author.date}</Moment>

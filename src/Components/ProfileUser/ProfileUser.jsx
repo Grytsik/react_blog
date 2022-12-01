@@ -17,12 +17,10 @@ export default function ProfileUser() {
 				 lastSignIn: auth.currentUser.metadata.lastSignInTime,
 			 };
 			 setUserProfile(authUserData);
-		 }
-	 })
+		 };
+	 });
 	 return getUserProfile();
  }, []);
-
- console.log(auth.currentUser);
 
 	return (
 		<>

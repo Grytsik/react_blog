@@ -15,7 +15,6 @@ export default function Slick() {
     dots: true,
     className: "center",
     centerMode: true,
-    // infinite: true,
     centerPadding: "60px",
     slidesToShow: 3,
     speed: 2000,
@@ -28,25 +27,53 @@ export default function Slick() {
       <div className="slider__block">
         <Slider {...settings}>
           <div className="slider__item">
-            <img className="slider__img" src={slider1} alt="" />
+            <img
+              className="slider__img"
+              src={slider1}
+              alt="image"
+            />
           </div>
           <div className="slider__items">
-            <img className="slider__img" src={slider2} alt="" />
+            <img
+              className="slider__img"
+              src={slider2}
+              alt="image"
+            />
           </div>
           <div className="slider__items">
-            <img className="slider__img" src={slider3} alt="" />
+            <img
+              className="slider__img"
+              src={slider3}
+              alt="image"
+            />
           </div>
           <div className="slider__items">
-            <img className="slider__img" src={slider4} alt="" />
+            <img
+              className="slider__img"
+              src={slider4}
+              alt="image"
+            />
           </div>
           <div className="slider__items">
-            <img className="slider__img" src={slider5} alt="" />
+            <img
+              className="slider__img"
+              src={slider5}
+              alt="image"
+            />
           </div>
           <div className="slider__items">
-          <img className="slider__img" src={slider6} alt="" />
+          <img
+            className="slider__img"
+            src={slider6}
+            alt="image"
+          />
           </div>
           <div className="slider__items">
-          <img className="slider__img" src={slider7} alt="" />
+          <img
+            className="slider__img"
+            src={slider7}
+            alt="image"
+          />
           </div>
         </Slider>
       </div>

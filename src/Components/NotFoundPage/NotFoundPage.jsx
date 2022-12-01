@@ -10,11 +10,19 @@ export default function NotFoundPage({props, classBtn}) {
 		<div className='notFound'>
 			<div className='notFoundBlock'>
 				<p className='notFoundtext'>Ooops, {props} not found...</p>
-				<img className='notFoundImage' src={notPostLogo} alt=":("/>
+				<img
+					className='notFoundImage'
+					src={notPostLogo}
+					alt=":("
+				/>
 			</div>
 			<div className='toHomeLink'>
 				<Link to='/'>
-					<button className={`${classNameBtn ? 'toHomeLinkBtn' : 'hideBtn'}`}>Back to home</button>
+					<button
+					className={`${classNameBtn ? 'toHomeLinkBtn' : 'hideBtn'}`}
+					>
+						Back to home
+					</button>
 				</Link>
 			</div>
 		</div>

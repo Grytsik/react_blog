@@ -32,12 +32,12 @@ export default function App() {
 
 		setTimeout(() => {
 			setLoaderActive(true);
-		},1000)
-	}, []);
+		},1000);
+	}, [postsCollectionRef]);
 
-	const scrollRef = () => {
-		myRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-	};
+	// const scrollRef = () => {
+	// 	myRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+	// };
 
 	const filteredPost = postList.filter(item => {
 		return item.postTitle.toLowerCase().includes(search.toLowerCase());
@@ -49,7 +49,7 @@ export default function App() {
 				localStorage.clear();
 				setIsAuth(true);
 				navigate('/login');
-				scrollRef();
+				// scrollRef();
 			});
 	};
 
@@ -70,9 +70,20 @@ export default function App() {
 					/>
 					<div>
 						<Routes>
-							<Route path='/' element={<Homepage filteredPost={filteredPost} postList={postList} setPostList={setPostList}/>}/>
+							<Route path='/' element={
+								<Homepage
+								filteredPost={filteredPost}
+								postList={postList}
+								setPostList={setPostList}/>
+								}/>
 							<Route path='/comments/:id' element={<AddComments/>}/>
-							<Route path='/createpost' element={<CreatePost isAuth={isAuth} myRef={myRef} scrollRef={scrollRef}/>}/>
+							<Route path='/createpost' element={
+								<CreatePost
+									isAuth={isAuth}
+									myRef={myRef}
+									// scrollRef={scrollRef}
+								/>}
+							/>
 							<Route path='/login' element={<Login setIsAuth={setIsAuth}/>}/>
 							<Route path='/profile' element={<ProfileUser/>}/>
 							<Route path='*' element={<NotFoundPage classBtn={true} props={'page'}/>}/>

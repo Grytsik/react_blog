@@ -46,7 +46,11 @@ export default function  LoginUserProfile({signOutGoogle}) {
 	return (
 		<>
 		{profile && (
-			<div className="loginProfile" ref={ref} key={profile.id}>
+			<div
+				className="loginProfile"
+				ref={ref}
+				key={profile.id}
+			>
 				{profile.img ?
 					<img
 					className="userLoginPhoto"

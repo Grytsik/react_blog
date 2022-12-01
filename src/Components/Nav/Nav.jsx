@@ -44,12 +44,14 @@ export default function Nav({isAuth, setIsAuth, signOutGoogle, searchPost}) {
 						/>
 					</div>
 					{!userAuth ?
-						<Link className="navLink" to='/login'>Login</Link> :
-							<LoginUserProfile
-								setIsAuth={setIsAuth}
-								isAuth={isAuth}
-								signOutGoogle={signOutGoogle}
-							/>
+						<Link className="navLink" to='/login'>
+							Login
+						</Link> :
+						<LoginUserProfile
+							setIsAuth={setIsAuth}
+							isAuth={isAuth}
+							signOutGoogle={signOutGoogle}
+						/>
 					}
 				</div>
 			</nav>

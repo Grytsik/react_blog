@@ -26,8 +26,8 @@ export default function AddComments () {
 					img: auth.currentUser.photoURL,
 					date: Date.now(),
 				}
-			})
-		}
+			});
+		};
 		setCommentsList('');
 	};
 
@@ -35,7 +35,7 @@ export default function AddComments () {
 		const getComments = async () => {
 			const userData = await getDocs(commentsCollectionRef);
 			setCommentsUser(userData.docs.map(doc => ({...doc.data(), id: doc.id})));
-		}
+		};
 		getComments();
 	}, [commentsList]);
 
@@ -43,7 +43,7 @@ export default function AddComments () {
 		const getPosts = async () => {
 			const postData = await getDocs(postsCollectionRef);
 			setPost(postData.docs.map(doc => ({...doc.data(), id: doc.id})));
-		}
+		};
 		getPosts();
 	}, []);
 
@@ -53,7 +53,10 @@ export default function AddComments () {
 			item.id !== id ?
 				null :
 				<div key={item.id}>
-					<Post props={item}>
+					<Post
+						props={item}
+						cname='userPost'
+						imgClass='userPost__image'>
 						<h2 className="userTitle">{item.postTitle}</h2>
 						<p>{item.postText}</p>
 					</Post>
