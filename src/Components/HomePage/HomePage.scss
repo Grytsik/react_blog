@@ -2,189 +2,183 @@ $color-black: #000;
 $color-white: #fff;
 $color-red: #de3131;
 $color-blue: #61dafb;
+$color-gray: #b2b1b0;
 
 .homePage {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	color: $color-black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $color-black;
 }
 
 .homePage__container {
-	display: flex;
+  display: flex;
   flex-wrap: wrap;
-	justify-content: space-around;
-}
-
-.userProfile {
-	align-items: center;
-	flex-grow: 1;
+  justify-content: space-around;
 }
 
 .userPost {
-	width: 700px;
-	background: inherit;
-	box-shadow: 4px 3px 10px #9c8a8a;
-	color: black;
-	border-radius: 5px;
-	margin-top: 50px;
-	padding: 10px 10px;
-	position: relative;
-	background: #fff;
+  width: 700px;
+  background: inherit;
+  box-shadow: 4px 3px 10px #9c8a8a;
+  color: $color-black;
+  border-radius: 5px;
+  margin-top: 50px;
+  padding: 10px 10px;
+  position: relative;
+  background: $color-white;
 }
 
 .userInfo {
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding: 0 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .postImage {
-	display: block;
-	// margin: auto;
-	margin-top: 15px;
-	width: 200px;
-	// height: 200px;
-	object-fit: contain;
+  display: block;
+  margin-top: 15px;
+  width: 150px;
+  object-fit: contain;
 }
 
 .postUser {
-	width: 800px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	box-shadow: 4px 3px 10px #9c8a8a;
-	color: black;
-	border-radius: 5px;
-	margin-top: 50px;
-	padding: 10px 10px;
-	position: relative;
-	background: #fff;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 4px 3px 10px #9c8a8a;
+  color: $color-black;
+  border-radius: 5px;
+  margin-top: 50px;
+  padding: 10px 10px;
+  position: relative;
+  background: $color-white;
 }
 
 .userPost {
-	border: 2px solid $color-white;
+  border: 2px solid $color-white;
 }
 
 .userPhoto {
-	width: 65px;
-	height: 65px;
-	border-radius: 5px;
-	transition: all .1s linear;
-	&:hover {
-		transition: all .1s linear;
-		transform: scale(1.2);
-	}
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  transition: all 0.1s linear;
+  &:hover {
+    transition: all 0.1s linear;
+    transform: scale(1.2);
+  }
 }
 
 .userTitle {
-	margin: 15px 0;
+  margin: 15px 0;
 }
 
 .userText {
-	overflow: hidden;
-	text-overflow: ellipsis;
-	display: -moz-box;
-	-moz-box-orient: vertical;
-	display: -webkit-box;
-	-webkit-line-clamp: 3;
-	-webkit-box-orient: vertical;
-	line-clamp: 3;
-	box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  line-clamp: 3;
+  box-orient: vertical;
+  margin-bottom: 20px;
 }
 
 .userEmail {
-	font-size: 20px;
-	color: #B2B1B0;
+  font-size: 16px;
+  color: $color-gray;
 }
 
 .chatLogo__btn {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
 }
 
 .chat__btn {
-	width: 40px;
+  width: 40px;
   height: 40px;
 }
 
-
 .deleteBtn {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	border-radius: 20px;
-	padding: 10px 20px;
-	border-radius: 20px;
-	font-weight: bold;
-	color: $color-white;
-	background: $color-red;
-	box-shadow: 0 0 40px 40px $color-red inset, 0 0 0 0 $color-red;
-	transition: all .2s linear;
-	&:hover {
-		font-weight: bold;
-		color: $color-red ;
-		background: $color-white;
-		box-shadow: 0 0 10px 0 $color-black;
-		transition: all .2s linear;
-	}
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 20px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  color: $color-white;
+  background: $color-red;
+  box-shadow: 0 0 40px 40px $color-red inset, 0 0 0 0 $color-red;
+  transition: all 0.2s linear;
+  &:hover {
+    font-weight: bold;
+    color: $color-red;
+    background: $color-white;
+    box-shadow: 0 0 10px 0 $color-black;
+    transition: all 0.2s linear;
+  }
 }
 
 .edit__block {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-bottom: 15px;
 }
 
 .edit__text {
-	width: 300px;
-	margin-bottom: 20px;
+  width: 300px;
+  margin-bottom: 20px;
 }
 
 .edit__area {
-	width: 100%;
-	font-size: 16px;
-	height: 200px;
-	padding: 5px;
-	resize: none;
-	position: relative;
-	border: 2px solid $color-black;
-	border-radius: 5px;
-	position: relative;
+  width: 100%;
+  font-size: 16px;
+  height: 200px;
+  padding: 5px;
+  resize: none;
+  position: relative;
+  border: 2px solid $color-black;
+  border-radius: 5px;
+  position: relative;
 }
 
 .btn__group {
-	position: absolute;
-	bottom: 10px;
-	right: 20px;
-	display: flex;
-	align-items: flex-start;
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  display: flex;
+  align-items: flex-start;
 }
 
 .commentLogo__btn {
-	width: 40px;
-	height: 40px;
-	margin-left: 30px;
-	&:hover {
-	transition: all .3s linear;
-	transform: rotate(360deg);
-	}
+  width: 40px;
+  height: 40px;
+  margin-left: 30px;
+  &:hover {
+    transition: all 0.3s linear;
+    transform: rotate(360deg);
+  }
 }
 
 .editLogo__btn {
-	position: absolute;
-	top: 10px;
-	right: 196px;
-	box-shadow: 0 0 10px 0 $color-black;
-  padding: 10px 20px;
+  position: absolute;
+  top: 10px;
+  right: 100px;
+  box-shadow: 0 0 10px 0 $color-black;
+  padding: 4px 10px;
   background-color: $color-white;
   border-radius: 20px;
   overflow: hidden;
@@ -199,8 +193,8 @@ $color-blue: #61dafb;
 }
 
 .editBtn {
-	box-shadow: 0 0 10px 0 $color-black;
-	margin-top: 10px;
+  box-shadow: 0 0 10px 0 $color-black;
+  margin-top: 10px;
   padding: 8px 30px;
   background-color: $color-white;
   border-radius: 20px;
@@ -216,31 +210,30 @@ $color-blue: #61dafb;
 }
 
 .pagination {
-	list-style: none;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-top: 30px;
-	font-size: 25px;
-	gap: 10px;
-	.active-page {
-		border-radius: 10px;
-		background-color: #61dafb;
-	}
-	.page-num {
-		cursor: pointer;
-		padding: 5px;
-		font-weight: bold;
-		transition: .2s linear;
-		&:not([disabled]):hover {
-			border-radius: 10px;
-			background-color: #61dafb;
-			transition: .2s linear;
-		}
-	}
-	.disabled-page {
-		color: #B2B1B0;
-		pointer-events: none;
-	}
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 25px;
+  gap: 10px;
+  .active-page {
+    border-radius: 10px;
+    background-color: $color-blue;
+  }
+  .page-num {
+    cursor: pointer;
+    padding: 5px;
+    font-weight: bold;
+    transition: 0.2s linear;
+    &:not([disabled]):hover {
+      border-radius: 10px;
+      background-color: $color-blue;
+      transition: 0.2s linear;
+    }
+  }
+  .disabled-page {
+    color: $color-gray;
+    pointer-events: none;
+  }
 }
-

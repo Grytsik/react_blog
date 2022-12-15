@@ -1,15 +1,28 @@
 .post {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .userPost__image {
-	display: block;
-	margin: auto;
-	margin-top: 15px;
-	width: 100%;
-	HEIGHT: 100%;
-	object-fit: cover;
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.userProfile {
+  align-items: center;
+  flex-grow: 1;
+}
+
+.userProfile__photo {
+  display: flex;
+}
+
+.userProfile__name {
+  margin-left: 15px;
 }

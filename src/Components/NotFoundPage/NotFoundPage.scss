@@ -2,49 +2,48 @@ $color-black: #000;
 $color-white: #fff;
 $color-red: #de3131;
 
-
 .notFoundBlock {
-	padding: 30px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .notFoundImage {
-	width: 100px;
-	height: 100px;
+  width: 100px;
+  height: 100px;
 }
 
 .notFoundtext {
-	font-size: 30px;
-	font-weight: bold;
-	margin-right: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 20px;
 }
 
-.toHomeLink{
-		text-align: center;
-		text-transform: none;
-		text-decoration: none;
+.toHomeLink {
+  text-align: center;
+  text-transform: none;
+  text-decoration: none;
 }
 
 .hideBtn {
-	display: none;
+  display: none;
 }
 
 .toHomeLinkBtn {
-	top: 10px;
-	right: 196px;
-	box-shadow: 0 0 10px 0 $color-black;
-	padding: 8px 30px;
-	background-color: $color-white;
-	border-radius: 20px;
-	overflow: hidden;
-	color: rgba(0, 0, 0, 0);
-	text-shadow: 0 0 0 $color-black, 0 3rem 0 $color-white;
-	transition: background-color 150ms, text-shadow 200ms;
-	font-size: 1.1rem;
-		&:hover {
-			background-color: $color-red;
-			text-shadow: 0 -3rem 0 $color-black, 0 0 0 $color-white;
-		}
+  top: 10px;
+  right: 196px;
+  box-shadow: 0 0 10px 0 $color-black;
+  padding: 8px 30px;
+  background-color: $color-white;
+  border-radius: 20px;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 0 $color-black, 0 3rem 0 $color-white;
+  transition: background-color 150ms, text-shadow 200ms;
+  font-size: 1.1rem;
+  &:hover {
+    background-color: $color-red;
+    text-shadow: 0 -3rem 0 $color-black, 0 0 0 $color-white;
+  }
 }

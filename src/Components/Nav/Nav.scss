@@ -1,73 +1,73 @@
 $color-white: #fff;
 $color-black: #151715;
+$color-blue: #61dafb;
 
 nav {
-	text-transform: uppercase;
-	padding: 20px;
-	background: $color-black;
-	position: relative;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  background: $color-black;
+  position: relative;
 }
 
 .nav__container {
-	display: flex;
-	justify-content: space-between;
-	position: relative;
-
-		&:before {
-			content: '';
-			position: absolute;
-			background: $color-black;
-			display: block;
-			width: 100px;
-			top: 10px;
-		}
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    background: $color-black;
+    display: block;
+    width: 100px;
+    top: 10px;
+  }
 }
 
 .navLink {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	color: $color-white;
-	text-decoration: none;
-	font-weight: bold;
-	font-size: 20px;
-	position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
 
-		&:hover {
-			color: #61dafb;
-			transition: all .2s linear;
-		}
+  &:hover {
+    color: $color-blue;
+    transition: all 0.2s linear;
+  }
 }
 
 .react__logo {
-	width: 50px;
-	height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 .logOutBtn {
-		padding: 8px 40px;
-		border-radius: 20px;
-		background: none;
-		border: 1px solid $color-white;
-		color: $color-black;
-		box-shadow: 0 0 40px 40px $color-white inset, 0 0 0 0 $color-white;
-		transition: all .2s ease-in-out;
-		&:hover {
-			color: #61dafb;
-			box-shadow: 0 0 10px 0 $color-white inset, 0 0 10px 4px $color-white;
-		}
+  padding: 8px 40px;
+  border-radius: 20px;
+  background: none;
+  border: 1px solid $color-white;
+  color: $color-black;
+  box-shadow: 0 0 40px 40px $color-white inset, 0 0 0 0 $color-white;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    color: $color-blue;
+    box-shadow: 0 0 10px 0 $color-white inset, 0 0 10px 4px $color-white;
+  }
 }
 
 .search__block {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .search__input {
-	width: 250px;
-	color: $color-white;
-	border-bottom: 2px solid $color-white;
+  width: 250px;
+  color: $color-white;
+  border-bottom: 2px solid $color-white;
 }

@@ -3,8 +3,8 @@ button {
   border: none;
   outline: none;
   background: none;
-  font-family: 'Work Sans', sans-serif;
-	font-weight: bold;
+  font-family: "Work Sans", sans-serif;
+  font-weight: bold;
 }
 
 .loginForm {
@@ -30,22 +30,22 @@ button {
   position: relative;
   width: 900px;
   height: 550px;
-	margin-top: 50px;
-	color: black;
-	border-radius: 5px;
+  margin-top: 50px;
+  color: black;
+  border-radius: 5px;
 }
 
 .form {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   width: 640px;
   height: 100%;
   transition: transform 1.2s ease-in-out;
   padding: 50px 30px;
-	color: black;
-	background: #ffe4c4;
+  color: black;
+  background: #ffe4c4;
 }
 
 .sub-cont {
@@ -86,7 +86,7 @@ button {
     top: 0;
     width: 900px;
     height: 100%;
-    background-image: url('../../img/town.jpeg');
+    background-image: url("../../img/town.jpeg");
     background-size: cover;
     transition: transform 1.2s ease-in-out;
   }
@@ -145,14 +145,14 @@ button {
   text-transform: uppercase;
   font-size: 15px;
   cursor: pointer;
-	border-radius: 20px;
-	transition: all .2s ease-out;
+  border-radius: 20px;
+  transition: all 0.2s ease-out;
 
   &:hover {
     background: #fff;
     color: black;
     font-weight: bold;
-    transition: all .2s ease-out;
+    transition: all 0.2s ease-out;
   }
 
   &::after {
@@ -202,9 +202,9 @@ label {
   text-align: center;
 }
 label span {
-	font-size: 15px;
-	color: black;
-	font-weight: 700;
+  font-size: 15px;
+  color: black;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
@@ -231,49 +231,49 @@ input {
   margin-top: 40px;
   margin-bottom: 20px;
   text-transform: uppercase;
-	border: 2px solid black;
+  border: 2px solid black;
   border-radius: 30px;
-	background: white;
-	color: black;
-	font-weight: 700;
-	transition: all .3s ease-in-out;
+  background: white;
+  color: black;
+  font-weight: 700;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    background: #3C3A39;
+    background: #3c3a39;
     color: white;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
 }
 
 .fb-btn {
   width: 270px;
   height: 36px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
   border: 2px solid #000;
   border-radius: 30px;
   color: #000;
-	padding: 20px 10px;
-	text-transform: uppercase;
-	font-weight: bold;
-	transition: all .2s linear;
+  padding: 20px 10px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.2s linear;
 
   &:hover {
     background: #db4a39;
     color: white;
-    transition: all .2s linear;
+    transition: all 0.2s linear;
   }
 }
 
 .logoGoogle {
-	position: absolute;
-	top: 0;
-	right: 0;
-	background: none;
-	width: 40px;
-	height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  width: 40px;
+  height: 40px;
 }
 
 .fb-btn span {

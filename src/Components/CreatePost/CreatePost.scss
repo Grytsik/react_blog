@@ -6,57 +6,56 @@ $btn-color: #000;
 $btn-hover-color: #fff;
 
 .createPostPage {
-	height: 100vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	color: $color-black;
-
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $color-black;
 }
 
 .createPost__container {
-	width: 800px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	background: $color-white;
-	border-radius: 5px;
-	padding: 50px 10px;
-	margin-top: 50px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: $color-white;
+  border-radius: 5px;
+  padding: 50px 10px;
+  margin-top: 50px;
 }
 
 .create__area {
-	width: 600px;
-	height: 300px;
-	padding: 10px;
-	resize: none;
-	position: relative;
-	border-bottom: 1px solid $color-black;
-	border-radius: 5px;
-	border: none;
-	background: none;
-	outline: none;
-	box-shadow: 8px 3px 15px #9c8a8a;
+  width: 600px;
+  height: 300px;
+  padding: 10px;
+  resize: none;
+  position: relative;
+  border-bottom: 1px solid $color-black;
+  border-radius: 5px;
+  border: none;
+  background: none;
+  outline: none;
+  box-shadow: 8px 3px 15px #9c8a8a;
 
-	&::placeholder {
-		color: $color-black;
-	}
+  &::placeholder {
+    color: $color-black;
+  }
 }
 
 .createPost__upload {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .createPost__file {
-	margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .uploadBtn {
-	box-shadow: 0 0 10px 0 $color-black;
+  box-shadow: 0 0 10px 0 $color-black;
   padding: 5px 30px;
   background-color: $color-white;
   border-radius: 20px;
@@ -72,23 +71,23 @@ $btn-hover-color: #fff;
 }
 
 .createPost__progress {
-	text-align: center;
-	font-size: 30px;
+  text-align: center;
+  font-size: 30px;
 }
 
 .block__create {
-	margin-top: 30px;
-	position: relative;
+  margin-top: 30px;
+  position: relative;
 }
 
 .postBtn {
-	padding: 5px 15px;
-	border-radius: 10px;
-	border: 2px solid $color-black;
-	position: absolute;
-	bottom: 15px;
-	right: 10px;
-	box-shadow: 0 0 10px 0 $color-black;
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: 2px solid $color-black;
+  position: absolute;
+  bottom: 15px;
+  right: 10px;
+  box-shadow: 0 0 10px 0 $color-black;
   padding: 8px 20px;
   background-color: $color-white;
   border-radius: 20px;
@@ -97,16 +96,12 @@ $btn-hover-color: #fff;
   text-shadow: 0 0 0 $color-black, 0 3rem 0 $color-white;
   transition: background-color 150ms, text-shadow 200ms;
   font-size: 1.1rem;
-
-	&:disabled {
-		color: grey;
-		border: gray;
-	}
-
-	&:hover:not([disabled]) {
+  &:disabled {
+    color: grey;
+    border: gray;
+  }
+  &:hover:not([disabled]) {
     background-color: $color-red;
     text-shadow: 0 -3rem 0 $color-black, 0 0 0 $color-white;
-	}
+  }
 }
-
-
