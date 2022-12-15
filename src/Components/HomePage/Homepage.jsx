@@ -1,12 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { Link } from "react-router-dom";
-import {
-  collection,
-  getDocs,
-  deleteDoc,
-  doc,
-  setDoc,
-} from "firebase/firestore";
+import { deleteDoc, doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../../firebase/firebase-config";
 import commentsLogo from "../../img/comments.png";
 import chat from "../../img/chat.png";
@@ -16,50 +10,44 @@ import "../HomePage/HomePage.scss";
 import Slick from "../Slider/Slick";
 import NotFoundPage from "../NotFoundPage/NotFoundPage";
 import ReactPaginate from "react-paginate";
+import { PostContext } from "../../App";
 
-export default function Homepage({ postList, setPostList, filteredPost }) {
+export default function Homepage() {
   const [edit, setEdit] = useState(null);
   const [valueEdit, setValueEdit] = useState("");
   const [editTitle, setEditTitle] = useState("");
-  const [commentsLength, setCommentsLength] = useState([]);
   const [itemOffset, setItemOffset] = useState(0);
+  const {
+    postList,
+    setPostList,
+    filteredPost,
+    getPosted,
+    getComments,
+    comments,
+  } = useContext(PostContext);
+  const myRef = useRef();
 
   const itemsPerPage = 4;
   const endOffset = itemOffset + itemsPerPage;
   const currentItems = filteredPost.slice(itemOffset, endOffset);
   const pageCount = Math.ceil(filteredPost.length / itemsPerPage);
 
-  const postsCollectionRef = collection(db, "posts");
-  const commentsCollectionRef = collection(db, "comments");
-
   useEffect(() => {
-    const getPosted = async () => {
-      const data = await getDocs(postsCollectionRef);
-      setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
     getPosted();
-  }, []);
-
-  useEffect(() => {
-    const getComments = async () => {
-      const data = await getDocs(commentsCollectionRef);
-      setCommentsLength(
-        data.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-      );
-    };
     getComments();
   }, []);
 
   // Функция для пагинации
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % filteredPost.length;
+    window.scrollTo({ behavior: "smooth", top: myRef.current.offsetTop });
     setItemOffset(newOffset);
   };
 
   // Функция подсчета комментов под постом
   function getCountComments(id) {
-    const com = commentsLength.filter((item) => item.postId === id);
-    return com.length;
+    const commentsCount = comments.filter((item) => item.postId === id);
+    return commentsCount.length;
   }
 
   const deletePost = async (id) => {
@@ -102,7 +90,7 @@ export default function Homepage({ postList, setPostList, filteredPost }) {
   };
 
   return (
-    <div className="homePage">
+    <div className="homePage" ref={myRef}>
       <Slick />
       <div className="container homePage__container">
         {currentItems.length === 0 ? (

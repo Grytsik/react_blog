@@ -4,23 +4,24 @@ import UserPhotos from "../UserPhotos/UserPhotos";
 import AnonimUser from "../AnonimUser/AnonimUser";
 import Moment from "react-moment";
 import "./UserComments.scss";
+import { useContext } from "react";
+import { PostContext } from "../../App";
 
-export default function UserComments({
-  commentsUser,
-  setCommentsUser,
-  paramsId,
-}) {
+export default function UserComments({ paramsId }) {
+  const { comments, setComments } = useContext(PostContext);
+
   const deleteComment = async (id) => {
     const commentDoc = doc(db, "comments", id);
     await deleteDoc(commentDoc);
 
-    let delComm = [...commentsUser].filter((item) => item.id !== id);
-    setCommentsUser(delComm);
+    let delComm = [...comments].filter((item) => item.id !== id);
+    setComments(delComm);
   };
 
+  console.log(comments);
   return (
     <>
-      {commentsUser.map((item) =>
+      {comments.map((item) =>
         item.postId !== paramsId ? null : (
           <div key={item.id} className="userComments">
             <div className="userComments__container">

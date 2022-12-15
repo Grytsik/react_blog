@@ -1,19 +1,18 @@
 import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { auth, db } from "../../firebase/firebase-config";
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import Post from "../Post/Post";
 import CommentsArea from "../CommentsArea/CommentsArea";
 import UserComments from "../UserComments.jsx/UserComments";
 import "./AddComments.scss";
+import { PostContext } from "../../App";
 
 export default function AddComments() {
   const [commentsList, setCommentsList] = useState("");
-  const [commentsUser, setCommentsUser] = useState([]);
-  const [post, setPost] = useState([]);
   const commentsCollectionRef = collection(db, "comments");
-  const postsCollectionRef = collection(db, "posts");
   const { id } = useParams();
+  const { postList, getComments } = useContext(PostContext);
 
   const createComments = async () => {
     if (commentsList) {
@@ -32,26 +31,12 @@ export default function AddComments() {
   };
 
   useEffect(() => {
-    const getComments = async () => {
-      const userData = await getDocs(commentsCollectionRef);
-      setCommentsUser(
-        userData.docs.map((doc) => ({ ...doc.data(), id: doc.id }))
-      );
-    };
     getComments();
   }, [commentsList]);
 
-  useEffect(() => {
-    const getPosts = async () => {
-      const postData = await getDocs(postsCollectionRef);
-      setPost(postData.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-    };
-    getPosts();
-  }, []);
-
   return (
     <>
-      {post.map((item) =>
+      {postList.map((item) =>
         item.id !== id ? null : (
           <div key={item.id}>
             <Post props={item} postClass="userPost" imgClass="userPost__image">
@@ -66,11 +51,7 @@ export default function AddComments() {
                 Add
               </button>
             </CommentsArea>
-            <UserComments
-              setCommentsUser={setCommentsUser}
-              paramsId={id}
-              commentsUser={commentsUser}
-            />
+            <UserComments paramsId={id} />
           </div>
         )
       )}

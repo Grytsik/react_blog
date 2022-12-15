@@ -6,7 +6,7 @@ import { db, auth, storage } from "../../firebase/firebase-config";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import "./CreatePost.scss";
 
-export default function CreatePost({ myRef, scrollRef }) {
+export default function CreatePost() {
   const [postTitle, setPostTitle] = useState("");
   const [postText, setPostText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
